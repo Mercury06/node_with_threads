@@ -1,0 +1,16 @@
+{
+  "name": "node-example",
+  "version": "1.0.1",
+  "description": "node app example",
+  "main": "index.js",
+  "scripts": {
+    "test": "com",
+    "start": "node src/index.ts"
+  },
+  "author": "Mercury06",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
+  }
+}
