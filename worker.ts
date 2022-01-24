@@ -1,4 +1,4 @@
-const { workerData, parentPort } = require ("worker_threads")
+const { workerData, parentPort, BroadcastChannel } = require ("worker_threads")
 
 console.log ("I`m worker!", workerData); 
 
@@ -9,3 +9,7 @@ parentPort.on('message', msg => {
 setTimeout( () => {
     parentPort.postMessage('Hello parent, three seconds later...');
 }, 3000);
+
+const bc = new BroadcastChannel('channel1');
+
+bc.postMessage('Worker 1 ready!');

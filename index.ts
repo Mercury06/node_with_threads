@@ -1,4 +1,4 @@
-const { Worker } = require ( "worker_threads");
+const { Worker, BroadcastChannel } = require ( "worker_threads");
 const path = require ('path');
 console.log (path.basename(__filename))
 console.log (' I`m from index');
@@ -11,3 +11,9 @@ worker.on("message", msg => {
 });
 
 worker.postMessage('Hello worker!');
+
+const bc = new BroadcastChannel('channel1');
+
+bc.onmessage = (msg) => {
+    console.log('In parent:', msg.data);
+}
